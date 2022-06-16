@@ -24,14 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Downloads ktlint cli
-      - name: Download ktlint cli
-        run: curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.45.2/ktlint && chmod a+x ktlint && sudo mv ktlint /usr/local/bin/
       
       # Runs ktlint
       - name: Run ktlint
-        run: ktlint "backend/**/*.kt"
+        run: cd backend && ./gradlew ktlintCheck
         
       # Runs tests
       - name: Run tests
