@@ -35,5 +35,5 @@ jobs:
         
       # Runs tests
       - name: Run tests
-        run: gradlew test
+        run: ./gradlew test
           
