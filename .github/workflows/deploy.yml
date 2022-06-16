@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: [Check]
+    workflows: [CI]
     branches: [master]
     types: [completed]
 
